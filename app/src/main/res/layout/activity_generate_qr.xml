@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EE5857"
+    >
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/subMain"
+        android:layout_width="match_parent"
+        android:layout_height="650dp"
+        android:background="@drawable/background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:id="@+id/generateText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36dp"
+            android:text="Generate QR"
+            android:textColor="#000"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+
+        <LinearLayout
+            android:id="@+id/uploadLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:layout_marginHorizontal="36dp"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/generateText"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/label"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:text="Upload File"
+                android:textColor="#000"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:gravity="center" />
+
+            <EditText
+                android:id="@+id/filePathText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.8"
+                android:textAlignment="center"
+                android:layout_gravity="center"
+                android:background="@android:color/transparent"
+                android:text="No file selected"
+                android:singleLine="true"
+                android:textColor="#000"
+                android:minEms="20"
+                android:focusable="false"
+                android:clickable="false"
+                android:cursorVisible="false"
+                android:textSize="18sp"
+                android:gravity="center"
+                tools:ignore="HardcodedText" />
+
+            <ImageView
+                android:id="@+id/fileInput"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.2"
+                android:src="@drawable/ic_upload"
+                android:backgroundTint="#EE5857"
+                android:textColor="#FFF"
+                android:paddingStart="4dp" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/tagLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginHorizontal="36dp"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/uploadLayout"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/label2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Tag"
+                android:textColor="#000"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/tagInput"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textColor="#000"
+                android:textColorHint="#828282"
+                android:hint="Tag"
+                android:inputType="text"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp" />
+        </LinearLayout>
+
+
+        <Button
+            android:id="@+id/generateQRButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="36dp"
+            android:layout_marginTop="32dp"
+            android:backgroundTint="#EE5857"
+            android:gravity="center"
+            android:text="Generate"
+            android:textColor="#FFF"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tagLayout" />
+
+        <TextView
+            android:id="@+id/qr_text"
+            android:layout_width="273dp"
+            android:layout_height="170dp"
+            android:layout_marginTop="80dp"
+            android:text="Your QR code \nwill be generated here"
+            android:textAlignment="center"
+            android:textColor="#EE5857"
+            android:textSize="40dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/generateQRButton" />
+
+        <ImageView
+            android:id="@+id/generatedQRCode"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="68dp"
+            android:contentDescription="Generated QR Code"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/generateQRButton" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="274dp"
+            android:layout_height="172dp"
+            android:layout_marginTop="80dp"
+            android:indeterminateTint="#EE5857"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.495"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/generateQRButton"/>
+
+        <TextView
+            android:id="@+id/generatingText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Generating QR Code ..."
+            android:visibility="gone"
+            android:textColor="#EE5857"
+            android:gravity="center"
+            android:textSize="16dp"
+            app:layout_constraintTop_toBottomOf="@id/progressBar"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

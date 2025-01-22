@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "486994807797",
+    "project_id": "digitalqr-3c362",
+    "storage_bucket": "digitalqr-3c362.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:486994807797:android:8c4f866a7f4eb76a9a6ebc",
+        "android_client_info": {
+          "package_name": "com.example.dqr"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAmRU6G7nE7DsWJJ8V0FdzAFT-JKtlxK7U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
